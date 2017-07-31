@@ -3,7 +3,7 @@ require('babel-core/register');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './client/index.js',
@@ -14,15 +14,21 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /(\.js|\.jsx)$/,
+                test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /.scss$/,
+                loader: ExtractTextPlugin.extract(
+                    ['css-loader', 'sass-loader']
+                )
             }
         ]
     },
     plugins: [
         new webpack.DefinePlugin({
-            "process.env": {
+            'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
@@ -30,6 +36,8 @@ module.exports = {
             template: './client/index.html',
             filename: 'index.html',
             inject: 'body'
-        })
+        }),
+        new ExtractTextPlugin('bundle.css'),
+        new webpack.optimize.ModuleConcatenationPlugin()
     ]
 };
