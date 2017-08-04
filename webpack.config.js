@@ -1,5 +1,3 @@
-require('babel-core/register');
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -25,6 +23,9 @@ module.exports = {
                 )
             }
         ]
+    },
+    devServer: {
+        contentBase: path.resolve('client')
     },
     plugins: [
         new webpack.DefinePlugin({
