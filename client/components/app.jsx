@@ -1,31 +1,19 @@
 import React from 'react';
-import fetchData from '../providers/circleci.js';
+import ProjectWrapper from './project-wrapper.jsx';
+import loader from './loader.jsx';
 
+@loader
 export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            projects: []
-        };
-    }
-
-    componentDidMount() {
-        const projects = fetchData().then(projects => {
-            this.setState({ projects });
-        });
-    }
-
-    renderProjects() {
-        return this.state.projects.forEach(project =>
-            <p>{project._name}</p>
-        );
-    }
-
     render() {
+        const { data: projects } = this.props;
+
+        const passing = projects.filter(project => project.buildStatus === 'Success');
+        const failing = projects.filter(project => project.buildStatus === 'Failure');
         return (
-            <div>
-                <h1>Hello World!</h1>
-                { this.renderProjects() }
+            <div className="app">
+                <h1>CircleCI Build Monitor</h1>
+                <h1>{projects.length} apps, {passing.length} passing, {failing.length} failing</h1>
+                <ProjectWrapper projects={projects} />
             </div>
         );
     }

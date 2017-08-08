@@ -1,4 +1,11 @@
+@import 'project';
+
+html,
 body {
+  margin: 0;
+  padding: 0;
+
   font-family: sans-serif;
-  margin: 20px;
+  background-color: #161616;
+  color: #fff;
 }

@@ -1,0 +1,55 @@
+.project-wrapper {
+  display: flex;
+  height: 100%;
+  flex-flow: row wrap;
+}
+
+.project {
+  position: relative;
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+  background-color: #555;
+
+  &-success {
+    background-color: #42c88a;
+  }
+
+  &-failure {
+    background-color: #ed5c5c;
+  }
+
+  &-building {
+    background-color: #66d3e4;
+  }
+
+  .project-name,
+  .project-build-number,
+  .project-build-time {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  }
+
+  .project-name {
+    text-align: center;
+    line-height: 80px;
+    font-size: 20px;
+    padding: 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .project-build-number,
+  .project-build-time {
+    position: absolute;
+    bottom: 5px;
+  }
+
+  .project-build-number {
+    left: 10px;
+  }
+
+  .project-build-time {
+    right: 10px;
+  }
+}
