@@ -1,0 +1,9 @@
+---
+parser: babel-eslint
+extends:
+  - airbnb
+  - plugin:react/recommended
+plugins:
+  - react
+rules:
+  react/prop-types: off

@@ -1,5 +1,4 @@
 import Koa from 'koa';
-import Router from 'koa-router';
 import serve from 'koa-static';
 import mount from 'koa-mount';
 import logger from 'koa-logger';
@@ -12,4 +11,5 @@ app.use(logger());
 app.use(mount('/', serve('dist')));
 
 app.listen(port);
+// eslint-disable-next-line no-console
 console.log(`App running on http://localhost:${port}`);
