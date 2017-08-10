@@ -21,7 +21,7 @@ export default Component => (
       const { loading, data } = this.state;
 
       return loading ?
-        <div>Loading...</div> :
+        <div className="loading-spinner" /> :
         <Component {...this.props} data={data} />;
     }
   }
