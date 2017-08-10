@@ -14,8 +14,11 @@
   "scripts": {
     "start": "`npm bin`/webpack-dev-server",
     "build": "`npm bin`/webpack",
-    "lint": "`npm bin`/eslint . --ext js,jsx",
-    "lint-fix": "`npm run lint -- --fix"
+    "lint": "npm run lint-js && npm run lint-css",
+    "lint-js": "`npm bin`/eslint . --ext js,jsx",
+    "lint-js-fix": "`npm run lint-js -- --fix",
+    "lint-css": "`npm bin`/stylelint **/*.scss",
+    "lint-css-fix": "npm run lint-css -- --fix"
   },
   "pre-commit": [
     "lint"
@@ -40,6 +43,8 @@
     "node-sass": "^4.5.3",
     "pre-commit": "^1.2.2",
     "sass-loader": "^6.0.6",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
   },
