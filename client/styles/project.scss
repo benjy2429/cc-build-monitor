@@ -1,55 +1,35 @@
-.project-wrapper {
-  display: flex;
-  height: 100%;
-  flex-flow: row wrap;
+$project-pill-size: 70px;
+
+@keyframes buildingPulse {
+  0% { background-color: rgba(102, 211, 228, 1); }
+  100% { background-color: rgba(102, 211, 228, .5); }
 }
 
-.project {
-  position: relative;
-  width: 300px;
-  height: 100px;
-  margin: 10px;
+.project-building {
+  animation: buildingPulse 1.5s ease-in-out infinite alternate;
+}
+
+.project-success {
+  background-color: #42c88a;
+}
+
+.project-failure {
+  background-color: #ed5c5c;
+}
+
+.project-unknown {
   background-color: #555;
+}
 
-  &-success {
-    background-color: #42c88a;
-  }
-
-  &-failure {
-    background-color: #ed5c5c;
-  }
-
-  &-building {
-    background-color: #66d3e4;
-  }
-
-  .project-name,
-  .project-build-number,
-  .project-build-time {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
-  }
+.project-pill {
+  border-radius: $project-pill-size / 2;
+  height: $project-pill-size;
+  margin: 10px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 
   .project-name {
-    text-align: center;
-    line-height: 80px;
-    font-size: 20px;
-    padding: 0 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .project-build-number,
-  .project-build-time {
-    position: absolute;
-    bottom: 5px;
-  }
-
-  .project-build-number {
-    left: 10px;
-  }
-
-  .project-build-time {
-    right: 10px;
+    line-height: $project-pill-size;
+    font-size: $project-pill-size / 2;
+    padding: 0 $project-pill-size / 2;
   }
 }

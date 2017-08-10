@@ -1,7 +1,6 @@
 import React from 'react';
-import TimeAgo from 'react-timeago';
 
-export default class Project extends React.Component {
+export default class Project extends React.PureComponent {
   name() {
     const {
       project: { name },
@@ -13,15 +12,12 @@ export default class Project extends React.Component {
   render() {
     const {
       buildStatus,
-      buildNumber,
-      buildTime,
+      activity,
     } = this.props.project;
 
     return (
-      <div className={`project project-${buildStatus.toLowerCase()}`}>
+      <div className={`project-pill project-${buildStatus.toLowerCase()} project-${activity.toLowerCase()}`}>
         <div className="project-name">{this.name()}</div>
-        <div className="project-build-number">#{buildNumber}</div>
-        <TimeAgo className="project-build-time" date={buildTime} />
       </div>
     );
   }
