@@ -16,12 +16,10 @@ export default class ProjectWrapper extends React.PureComponent {
 
     return (
       <div className="project-wrapper">
-        {[
-          statusRow(building, 'Building'),
-          statusRow(failing, 'Failing'),
-          statusRow(success, 'Passing'),
-          statusRow(unknown, 'Unknown'),
-        ]}
+        { statusRow(building, 'Building') }
+        { statusRow(failing, 'Failing') }
+        { statusRow(success, 'Passing') }
+        { statusRow(unknown, 'Unknown') }
       </div>
     );
   }

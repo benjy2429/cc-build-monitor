@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project renders correctly 1`] = `
+<div
+  className="project-pill project-success project-sleeping"
+>
+  <div
+    className="project-name"
+  >
+    my-project
+  </div>
+</div>
+`;
+
+exports[`Project renders with the project's long name 1`] = `
+<div
+  className="project-pill project-success project-sleeping"
+>
+  <div
+    className="project-name"
+  >
+    org/my-project
+  </div>
+</div>
+`;

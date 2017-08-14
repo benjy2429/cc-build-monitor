@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status row renders correctly 1`] = `
+<div
+  className="status-row"
+>
+  <h2
+    className="status-heading"
+  >
+    2
+     
+    Failing
+  </h2>
+  <div
+    className="status-projects"
+  >
+    <Project
+      project={
+        Object {
+          "activity": "Sleeping",
+          "buildStatus": "Failure",
+          "name": "org/project-1",
+        }
+      }
+    />
+    <Project
+      project={
+        Object {
+          "activity": "Sleeping",
+          "buildStatus": "Failure",
+          "name": "org/project-2",
+        }
+      }
+    />
+  </div>
+</div>
+`;

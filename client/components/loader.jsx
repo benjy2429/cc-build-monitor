@@ -1,7 +1,7 @@
 import React from 'react';
-import fetchData from '../providers/circleci';
+import circleciProvider from '../providers/circleci';
 
-export default Component => (
+export default (Component, fetchData = circleciProvider) => (
   class Loader extends React.Component {
     constructor(props) {
       super(props);

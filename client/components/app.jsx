@@ -2,8 +2,7 @@ import React from 'react';
 import ProjectWrapper from './project-wrapper';
 import loader from './loader';
 
-@loader
-export default class App extends React.Component {
+class App extends React.PureComponent {
   render() {
     const { data: projects } = this.props;
     return (
@@ -13,3 +12,6 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default loader(App);
+export { App as UnwrappedApp };

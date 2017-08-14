@@ -1,9 +1,9 @@
-// import axios from 'axios';
+import axios from 'axios';
 import X2JSLib from 'x2js';
-import mock from './mock';
+import mock from '../../mocks/mock-original';
 import decorate from './decorator';
 
-// const ENDPOINT = '';
+const ENDPOINT = '';
 
 const parse = (xml) => {
   const parser = new X2JSLib();
@@ -15,11 +15,14 @@ const build = (data) => {
   return rawProjects.map(project => decorate(project));
 };
 
-const fetchProjects = () => (
-  Promise.resolve(mock)
-    // await axios.get(ENDPOINT).then(res => res.data)
+const fetchProjects = fetch => (
+  fetch.then(res => res.data)
     .then(parse)
     .then(build)
+    .catch(() => [])
 );
 
-export default () => fetchProjects();
+// const defaultFetch = axios.get(ENDPOINT);
+const defaultFetch = Promise.resolve(mock);
+
+export default (fetch = defaultFetch) => fetchProjects(fetch);

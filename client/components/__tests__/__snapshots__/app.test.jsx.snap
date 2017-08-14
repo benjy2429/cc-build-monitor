@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader renders correctly 1`] = `
+<div
+  className="full-height"
+>
+  <ProjectWrapper
+    projects={
+      Array [
+        Object {
+          "name": "project1",
+        },
+        Object {
+          "name": "project2",
+        },
+      ]
+    }
+  />
+</div>
+`;

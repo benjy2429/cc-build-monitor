@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project wrapper renders correctly 1`] = `
+<div
+  className="project-wrapper"
+>
+  <StatusRow
+    projects={
+      Array [
+        Object {
+          "activity": "Building",
+          "buildStatus": "Failure",
+          "name": "org/project-3",
+        },
+      ]
+    }
+    status="Building"
+  />
+  <StatusRow
+    projects={
+      Array [
+        Object {
+          "activity": "Sleeping",
+          "buildStatus": "Failure",
+          "name": "org/project-2",
+        },
+      ]
+    }
+    status="Failing"
+  />
+  <StatusRow
+    projects={
+      Array [
+        Object {
+          "activity": "Sleeping",
+          "buildStatus": "Success",
+          "name": "org/project-1",
+        },
+      ]
+    }
+    status="Passing"
+  />
+  <StatusRow
+    projects={
+      Array [
+        Object {
+          "activity": "Sleeping",
+          "buildStatus": "Unknown",
+          "name": "org/project-4",
+        },
+      ]
+    }
+    status="Unknown"
+  />
+</div>
+`;
