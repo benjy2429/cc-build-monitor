@@ -23,6 +23,6 @@ const fetchProjects = fetch => (
 );
 
 // const defaultFetch = axios.get(ENDPOINT);
-const defaultFetch = Promise.resolve(mock);
+const defaultFetch = Promise.resolve({ data: mock });
 
 export default (fetch = defaultFetch) => fetchProjects(fetch);
