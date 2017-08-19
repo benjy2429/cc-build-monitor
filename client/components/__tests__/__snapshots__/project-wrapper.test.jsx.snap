@@ -4,53 +4,41 @@ exports[`Project wrapper renders correctly 1`] = `
 <div
   className="project-wrapper"
 >
-  <StatusRow
-    projects={
-      Array [
-        Object {
-          "activity": "Building",
-          "buildStatus": "Failure",
-          "name": "org/project-3",
-        },
-      ]
+  <Project
+    project={
+      Object {
+        "activity": "Sleeping",
+        "buildStatus": "Success",
+        "name": "org/project-1",
+      }
     }
-    status="Building"
   />
-  <StatusRow
-    projects={
-      Array [
-        Object {
-          "activity": "Sleeping",
-          "buildStatus": "Failure",
-          "name": "org/project-2",
-        },
-      ]
+  <Project
+    project={
+      Object {
+        "activity": "Sleeping",
+        "buildStatus": "Failure",
+        "name": "org/project-2",
+      }
     }
-    status="Failing"
   />
-  <StatusRow
-    projects={
-      Array [
-        Object {
-          "activity": "Sleeping",
-          "buildStatus": "Success",
-          "name": "org/project-1",
-        },
-      ]
+  <Project
+    project={
+      Object {
+        "activity": "Building",
+        "buildStatus": "Failure",
+        "name": "org/project-3",
+      }
     }
-    status="Passing"
   />
-  <StatusRow
-    projects={
-      Array [
-        Object {
-          "activity": "Sleeping",
-          "buildStatus": "Unknown",
-          "name": "org/project-4",
-        },
-      ]
+  <Project
+    project={
+      Object {
+        "activity": "Sleeping",
+        "buildStatus": "Unknown",
+        "name": "org/project-4",
+      }
     }
-    status="Unknown"
   />
 </div>
 `;

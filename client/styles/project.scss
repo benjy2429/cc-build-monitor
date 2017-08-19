@@ -1,4 +1,4 @@
-$project-pill-size: 70px;
+$project-size: 50px;
 
 @keyframes buildingPulse {
   0% { background-color: rgba(102, 211, 228, 1); }
@@ -21,15 +21,17 @@ $project-pill-size: 70px;
   background-color: #555;
 }
 
-.project-pill {
-  border-radius: $project-pill-size / 2;
-  height: $project-pill-size;
-  margin: 10px;
+.project-bar {
+  height: $project-size;
+  line-height: $project-size;
+  margin: 10px 0;
+  padding: 0 20px;
+  font-size: $project-size / 2;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 
   .project-name {
-    line-height: $project-pill-size;
-    font-size: $project-pill-size / 2;
-    padding: 0 $project-pill-size / 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

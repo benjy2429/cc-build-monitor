@@ -1,25 +1,13 @@
 import React from 'react';
-import StatusRow from './status-row';
-
-const statusRow = (projects, status) => (
-  projects.length ? <StatusRow projects={projects} status={status} /> : null
-);
+import Project from './project';
 
 export default class ProjectWrapper extends React.PureComponent {
   render() {
     const { projects = [] } = this.props;
 
-    const failing = projects.filter(project => project.activity === 'Sleeping' && project.buildStatus === 'Failure');
-    const building = projects.filter(project => project.activity === 'Building');
-    const success = projects.filter(project => project.activity === 'Sleeping' && project.buildStatus === 'Success');
-    const unknown = projects.filter(project => project.activity === 'Sleeping' && project.buildStatus === 'Unknown');
-
     return (
       <div className="project-wrapper">
-        { statusRow(building, 'Building') }
-        { statusRow(failing, 'Failing') }
-        { statusRow(success, 'Passing') }
-        { statusRow(unknown, 'Unknown') }
+        { projects.map(project => <Project key={project.name} project={project} />)}
       </div>
     );
   }
