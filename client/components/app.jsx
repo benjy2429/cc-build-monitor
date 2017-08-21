@@ -1,7 +1,7 @@
 import React from 'react';
 // import io from 'socket.io-client';
 import ProjectWrapper from './project-wrapper';
-import loader from './loader';
+import loader from '../selectors/loader';
 
 class App extends React.PureComponent {
   componentDidMount() {

@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project Selector renders the wrapped component 1`] = `
+<WrappedComponent
+  projects={Array []}
+/>
+`;
+
+exports[`Project Selector sorts projects by activity 1`] = `
+Array [
+  Object {
+    "activity": "Building",
+  },
+  Object {
+    "activity": "Sleeping",
+  },
+  Object {
+    "activity": "SomethingElse",
+  },
+]
+`;
+
+exports[`Project Selector sorts projects by activity then build status then build time 1`] = `
+Array [
+  Object {
+    "activity": "Building",
+    "buildStatus": "Failure",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Building",
+    "buildStatus": "Unknown",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Sleeping",
+    "buildStatus": "Failure",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Sleeping",
+    "buildStatus": "Unknown",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Sleeping",
+    "buildStatus": "Success",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Sleeping",
+    "buildStatus": "Success",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+]
+`;
+
+exports[`Project Selector sorts projects by activity then build time 1`] = `
+Array [
+  Object {
+    "activity": "Building",
+    "buildTime": 2000-02-03T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Building",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "activity": "Sleeping",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+]
+`;
+
+exports[`Project Selector sorts projects by build status 1`] = `
+Array [
+  Object {
+    "buildStatus": "SomethingElse",
+  },
+  Object {
+    "buildStatus": "Failure",
+  },
+  Object {
+    "buildStatus": "Unknown",
+  },
+  Object {
+    "buildStatus": "Success",
+  },
+]
+`;
+
+exports[`Project Selector sorts projects by build status then build time 1`] = `
+Array [
+  Object {
+    "buildStatus": "Failure",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "buildStatus": "Failure",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+  Object {
+    "buildStatus": "Unknown",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "buildStatus": "Unknown",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+  Object {
+    "buildStatus": "Success",
+    "buildTime": 2000-02-02T00:00:00.000Z,
+  },
+  Object {
+    "buildStatus": "Success",
+    "buildTime": 2000-02-01T00:00:00.000Z,
+  },
+]
+`;

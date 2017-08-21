@@ -1,29 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ProjectWrapper from '../project-wrapper';
+import { UnwrappedProjectWrapper as ProjectWrapper } from '../project-wrapper';
 
 const defaultProps = {
   projects: [
-    {
-      buildStatus: 'Success',
-      activity: 'Sleeping',
-      name: 'org/project-1',
-    },
-    {
-      buildStatus: 'Failure',
-      activity: 'Sleeping',
-      name: 'org/project-2',
-    },
-    {
-      buildStatus: 'Failure',
-      activity: 'Building',
-      name: 'org/project-3',
-    },
-    {
-      buildStatus: 'Unknown',
-      activity: 'Sleeping',
-      name: 'org/project-4',
-    },
+    { name: 'org/project-1' },
+    { name: 'org/project-2' },
+    { name: 'org/project-3' },
   ],
 };
 

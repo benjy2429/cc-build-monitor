@@ -5,7 +5,7 @@ const input = {
   _activity: 'activity',
   _lastBuildStatus: 'lastBuildStatus',
   _lastBuildLabel: 'lastBuildLabel',
-  _lastBuildTime: 'lastBuildTime',
+  _lastBuildTime: '2000-01-01',
 };
 
 describe('Decorator', () => {
@@ -15,7 +15,7 @@ describe('Decorator', () => {
       activity: 'activity',
       buildStatus: 'lastBuildStatus',
       buildNumber: 'lastBuildLabel',
-      buildTime: 'lastBuildTime',
+      buildTime: new Date('2000-01-01'),
     });
   });
 
@@ -25,7 +25,7 @@ describe('Decorator', () => {
       activity: 'activity',
       buildStatus: 'lastBuildStatus',
       buildNumber: 'lastBuildLabel',
-      buildTime: 'lastBuildTime',
+      buildTime: new Date('2000-01-01'),
     });
   });
 

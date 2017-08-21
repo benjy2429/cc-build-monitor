@@ -9,5 +9,5 @@ export default ({
   activity: _activity,
   buildStatus: _lastBuildStatus,
   buildNumber: _lastBuildLabel,
-  buildTime: _lastBuildTime,
+  buildTime: _lastBuildTime && new Date(_lastBuildTime),
 });

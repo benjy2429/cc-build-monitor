@@ -24,7 +24,7 @@ body {
   overflow: hidden;
   width: calc(100% - 40px);
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     bottom: 0;

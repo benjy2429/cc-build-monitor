@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircleCI resolves data 1`] = `
+Array [
+  Object {
+    "activity": "Sleeping",
+    "buildNumber": "1",
+    "buildStatus": "Success",
+    "buildTime": 2000-01-01T12:00:00.000Z,
+    "name": "project1",
+  },
+  Object {
+    "activity": "Sleeping",
+    "buildNumber": "13",
+    "buildStatus": "Failure",
+    "buildTime": 2000-01-01T12:00:00.000Z,
+    "name": "project2",
+  },
+  Object {
+    "activity": "Building",
+    "buildNumber": "42",
+    "buildStatus": "Unknown",
+    "buildTime": 2000-01-01T12:00:00.000Z,
+    "name": "project3",
+  },
+]
+`;

@@ -7,8 +7,6 @@ exports[`Project wrapper renders correctly 1`] = `
   <Project
     project={
       Object {
-        "activity": "Sleeping",
-        "buildStatus": "Success",
         "name": "org/project-1",
       }
     }
@@ -16,8 +14,6 @@ exports[`Project wrapper renders correctly 1`] = `
   <Project
     project={
       Object {
-        "activity": "Sleeping",
-        "buildStatus": "Failure",
         "name": "org/project-2",
       }
     }
@@ -25,18 +21,7 @@ exports[`Project wrapper renders correctly 1`] = `
   <Project
     project={
       Object {
-        "activity": "Building",
-        "buildStatus": "Failure",
         "name": "org/project-3",
-      }
-    }
-  />
-  <Project
-    project={
-      Object {
-        "activity": "Sleeping",
-        "buildStatus": "Unknown",
-        "name": "org/project-4",
       }
     }
   />

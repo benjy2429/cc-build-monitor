@@ -18,7 +18,7 @@ exports[`Loader renders correctly 1`] = `
       2
        Projects
     </h1>
-    <ProjectWrapper
+    <ProjectSelector
       projects={
         Array [
           Object {
