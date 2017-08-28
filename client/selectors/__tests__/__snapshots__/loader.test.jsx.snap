@@ -3,11 +3,7 @@
 exports[`Loader renders the component after receiving data 1`] = `
 <Loader>
   <WrappedComponent
-    data={
-      Object {
-        "some": "data",
-      }
-    }
+    some="data"
   >
     <div
       className="wrapped-component"

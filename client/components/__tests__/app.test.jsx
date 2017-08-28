@@ -3,10 +3,16 @@ import { shallow } from 'enzyme';
 import { UnwrappedApp as App } from '../app';
 
 const defaultProps = {
-  data: [
-    { name: 'project1' },
-    { name: 'project2' },
-  ],
+  data: {
+    projects: [
+      { name: 'project1' },
+      { name: 'project2' },
+    ],
+    builds: [
+      { name: 'build1' },
+      { name: 'build2' },
+    ],
+  },
 };
 
 describe('Loader', () => {

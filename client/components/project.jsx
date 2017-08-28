@@ -17,7 +17,7 @@ export default class Project extends React.PureComponent {
 
     return (
       <div className={`project-bar project-${buildStatus.toLowerCase()} project-${activity.toLowerCase()}`}>
-        <div className="project-name">{this.name()}</div>
+        <div className="project-name text-ellipsis">{this.name()}</div>
       </div>
     );
   }

@@ -1,4 +1,6 @@
+@import 'globals';
 @import 'project';
+@import 'build';
 
 $color-background: #161616;
 
@@ -65,4 +67,10 @@ $spinner-weight: 7px;
   border: $spinner-weight solid rgba(255, 255, 255, 0.3);
   border-top: $spinner-weight solid #fff;
   animation: spin 1s linear 0s infinite;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

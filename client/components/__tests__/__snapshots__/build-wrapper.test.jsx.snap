@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Build wrapper renders correctly 1`] = `
+<div
+  className="build-wrapper"
+>
+  <Build
+    vcs_revision="abcdef"
+  />
+  <Build
+    vcs_revision="123456"
+  />
+</div>
+`;

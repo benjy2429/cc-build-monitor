@@ -1,0 +1,11 @@
+@keyframes buildingPulse {
+  0% { background-color: rgba(102, 211, 228, 1); }
+  100% { background-color: rgba(102, 211, 228, 0.5); }
+}
+
+$animation-building: buildingPulse 1.5s ease-in-out infinite alternate;
+
+$color-success: #42c88a;
+$color-failure: #ed5c5c;
+$color-unknown: #555;
+$color-queuing: #ab7fd1;

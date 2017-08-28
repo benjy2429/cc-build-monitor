@@ -5,7 +5,7 @@ exports[`Project renders correctly 1`] = `
   className="project-bar project-success project-sleeping"
 >
   <div
-    className="project-name"
+    className="project-name text-ellipsis"
   >
     my-project
   </div>
@@ -17,7 +17,7 @@ exports[`Project renders with the project's long name 1`] = `
   className="project-bar project-success project-sleeping"
 >
   <div
-    className="project-name"
+    className="project-name text-ellipsis"
   >
     org/my-project
   </div>

@@ -22,7 +22,7 @@ export default (Component, fetchData = circleciProvider) => (
 
       return loading ?
         <div className="loading-spinner" /> :
-        <Component {...this.props} data={data} />;
+        <Component {...this.props} {...data} />;
     }
   }
 );

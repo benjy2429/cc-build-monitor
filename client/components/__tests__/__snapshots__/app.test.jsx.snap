@@ -10,25 +10,19 @@ exports[`Loader renders correctly 1`] = `
     <h1>
       Recent builds
     </h1>
+    <BuildWrapper
+      builds={Array []}
+    />
   </div>
   <div
     className="projects"
   >
     <h1>
-      2
+      0
        Projects
     </h1>
     <ProjectSelector
-      projects={
-        Array [
-          Object {
-            "name": "project1",
-          },
-          Object {
-            "name": "project2",
-          },
-        ]
-      }
+      projects={Array []}
     />
   </div>
 </div>
