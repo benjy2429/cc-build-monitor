@@ -12,3 +12,4 @@ globals:
   it: true
   expect: true
   jest: true
+  fetch: true

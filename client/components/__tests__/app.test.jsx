@@ -15,7 +15,7 @@ const defaultProps = {
   },
 };
 
-describe('Loader', () => {
+describe('App', () => {
   it('renders correctly', () => {
     const component = shallow(
       <App {...defaultProps} />,

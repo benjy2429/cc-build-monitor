@@ -3,14 +3,14 @@ import { shallow } from 'enzyme';
 import Build from '../build';
 
 const defaultProps = {
-  reponame: 'my-project',
+  repo: 'my-project',
   branch: 'master',
-  build_num: 123,
+  buildNumber: 123,
   status: 'success',
-  build_time_millis: 5000,
+  buildTime: 5000,
   user: {
     name: 'Joe Bloggs',
-    avatar_url: 'https://example.com/image.png',
+    avatar: 'https://example.com/image.png',
   },
 };
 
@@ -38,7 +38,7 @@ describe('Build', () => {
   it('hides the time if it is not in the props', () => {
     const props = {
       ...defaultProps,
-      build_time_millis: undefined,
+      buildTime: undefined,
     };
     const component = shallow(
       <Build {...props} />,

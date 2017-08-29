@@ -5,10 +5,12 @@ exports[`Build wrapper renders correctly 1`] = `
   className="build-wrapper"
 >
   <Build
-    vcs_revision="abcdef"
+    buildNumber={1}
+    repo="project1"
   />
   <Build
-    vcs_revision="123456"
+    buildNumber={2}
+    repo="project2"
   />
 </div>
 `;

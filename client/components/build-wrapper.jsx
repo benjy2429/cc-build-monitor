@@ -7,7 +7,7 @@ export default class BuildWrapper extends React.PureComponent {
 
     return (
       <div className="build-wrapper">
-        {builds.map(build => <Build key={build.vcs_revision} {...build} />)}
+        {builds.map(build => <Build key={`${build.repo}${build.buildNumber}`} {...build} />)}
       </div>
     );
   }

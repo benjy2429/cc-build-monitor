@@ -23,21 +23,21 @@ export default class Build extends React.PureComponent {
 
   buildTime() {
     const {
-      build_time_millis: time,
+      buildTime,
       status,
     } = this.props;
-    return time && <Ticker time={time} ticking={status === 'running'} />;
+    return buildTime && <Ticker time={buildTime} ticking={status === 'running'} />;
   }
 
   render() {
     const {
-      reponame,
+      repo,
       branch,
-      build_num: buildNumber,
+      buildNumber,
       status,
       user: {
         name,
-        avatar_url: avatar,
+        avatar,
       },
     } = this.props;
 
@@ -46,7 +46,7 @@ export default class Build extends React.PureComponent {
         <div className="build-status">{this.statusName()}</div>
         <img className="build-author-avatar" src={avatar} title={name} alt={name} />
         <div className="build-details">
-          <div className="build-name text-ellipsis">#{buildNumber} - {reponame} / {branch}</div>
+          <div className="build-name text-ellipsis">#{buildNumber} - {repo} / {branch}</div>
         </div>
         <div className="build-time">{this.buildTime()}</div>
       </div>

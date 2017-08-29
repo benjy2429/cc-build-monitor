@@ -4,8 +4,8 @@ import BuildWrapper from '../build-wrapper';
 
 const defaultProps = {
   builds: [
-    { vcs_revision: 'abcdef' },
-    { vcs_revision: '123456' },
+    { repo: 'project1', buildNumber: 1 },
+    { repo: 'project2', buildNumber: 2 },
   ],
 };
 
