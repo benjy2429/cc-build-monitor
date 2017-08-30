@@ -1,0 +1,16 @@
+[
+  {
+    "reponame" : "my-project",
+    "branch" : "master",
+    "user" : {
+      "login" : "me",
+      "avatar_url" : "https://avatar.url",
+      "name" : "Me"
+    },
+    "vcs_revision" : "abc123",
+    "build_num" : 2,
+    "status" : "success",
+    "subject" : "Commit message",
+    "build_time_millis" : 10000
+  }
+]

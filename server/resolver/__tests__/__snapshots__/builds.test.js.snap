@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Resolve builds parses and decorates json data 1`] = `
+Array [
+  Object {
+    "branch": "master",
+    "buildNumber": 2,
+    "buildTime": 10000,
+    "commit": Object {
+      "hash": "abc123",
+      "message": "Commit message",
+    },
+    "repo": "my-project",
+    "status": "success",
+    "user": Object {
+      "avatar": "https://avatar.url",
+      "name": "Me",
+    },
+  },
+]
+`;
+
+exports[`Resolve builds returns an empty array when no data is fetched 1`] = `Array []`;
+
+exports[`Resolve builds returns an empty array when the fetch fails 1`] = `Array []`;

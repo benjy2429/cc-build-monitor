@@ -1,5 +1,6 @@
 {
   "snapshotSerializers": [
     "<rootDir>/node_modules/enzyme-to-json/serializer"
-  ]
+  ],
+  "setupTestFrameworkScriptFile": "./jest-config.js"
 }

@@ -14,6 +14,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "start-dev": "`npm bin`/babel-node server/index.js",
+    "start-mock": "USE_MOCKS=true npm run start-dev",
     "build": "`npm bin`/webpack",
     "test": "jest --config .jestrc.json",
     "test-update": "npm run test -- -u",

@@ -7,9 +7,13 @@ plugins:
   - react
 rules:
   react/prop-types: off
+  import/extensions: ["error", "never", { "json": "never" }]
+  no-console: ["error", { "allow": ["error"] }]
 globals:
   describe: true
   it: true
   expect: true
   jest: true
   fetch: true
+  beforeEach: true
+  afterEach: true
