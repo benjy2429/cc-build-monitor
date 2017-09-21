@@ -1,17 +1,9 @@
 import React from 'react';
-// import io from 'socket.io-client';
 import ProjectWrapper from './project-wrapper';
 import BuildWrapper from './build-wrapper';
 import loader from '../selectors/loader';
 
 class App extends React.PureComponent {
-  componentDidMount() {
-    // const socket = io.connect('http://localhost:3000');
-    // socket.on('message', (message) => {
-    //   console.log('new message:', message);
-    // });
-  }
-
   render() {
     const { projects = [], builds = [] } = this.props;
     return (

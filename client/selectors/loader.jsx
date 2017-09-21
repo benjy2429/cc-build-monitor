@@ -1,10 +1,9 @@
 import React from 'react';
+import io from 'socket.io-client';
 
-const defaultFetchData = () => (
-  fetch('/fetch').then(res => res.json())
-);
+const SOCKET_ENDPOINT = 'http://localhost:3000';
 
-export default (Component, fetchData = defaultFetchData) => (
+export default Component => (
   class Loader extends React.Component {
     constructor(props) {
       super(props);
@@ -15,8 +14,9 @@ export default (Component, fetchData = defaultFetchData) => (
     }
 
     componentDidMount() {
-      fetchData().then((data) => {
-        this.setState({ loading: false, data });
+      const socket = io.connect(SOCKET_ENDPOINT);
+      socket.on('monitorData', (data) => {
+        this.setState({ loading: false, data: JSON.parse(data) });
       });
     }
 
