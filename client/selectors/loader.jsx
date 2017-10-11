@@ -1,9 +1,9 @@
 import React from 'react';
-import io from 'socket.io-client';
+import axios from 'axios';
 
-const SOCKET_ENDPOINT = 'http://localhost:3000';
+const defaultFetch = () => axios.get('/fetch');
 
-export default Component => (
+export default (Component, fetch = defaultFetch) => (
   class Loader extends React.Component {
     constructor(props) {
       super(props);
@@ -13,11 +13,9 @@ export default Component => (
       };
     }
 
-    componentDidMount() {
-      const socket = io.connect(SOCKET_ENDPOINT);
-      socket.on('monitorData', (data) => {
-        this.setState({ loading: false, data: JSON.parse(data) });
-      });
+    async componentDidMount() {
+      const res = await fetch();
+      this.setState({ loading: false, data: res.data });
     }
 
     render() {

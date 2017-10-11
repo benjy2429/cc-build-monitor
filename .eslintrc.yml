@@ -7,6 +7,7 @@ plugins:
   - react
 rules:
   react/prop-types: off
+  react/no-did-mount-set-state: off
   import/extensions: ["error", "never", { "json": "never" }]
   no-console: ["error", { "allow": ["error"] }]
 globals:

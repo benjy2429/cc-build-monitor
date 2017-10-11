@@ -1,27 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import io from 'socket.io-client';
 import loader from '../loader';
 
 const WrappedComponent = () => <div className="wrapped-component" />;
-const stubProvider = Promise.resolve({ some: 'data' });
+const stubProvider = Promise.resolve({ data: { some: 'data' } });
 const LoaderComponent = loader(WrappedComponent, () => stubProvider);
 
 describe('Loader', () => {
-  let onMessage;
-
-  beforeEach(() => {
-    io.connect = jest.fn().mockReturnValue({
-      on: (event, cb) => { onMessage = cb; },
-    });
-  });
-
-  afterEach(() => {
-    if (jest.isMockFunction(io.connect)) {
-      io.connect.mockReset();
-    }
-  });
-
   it('renders the spinner initially', () => {
     const component = mount(
       <LoaderComponent />,
@@ -29,11 +14,11 @@ describe('Loader', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders the component after receiving data', () => {
+  it('renders the component after receiving data', async () => {
     const component = mount(
       <LoaderComponent />,
     );
-    onMessage(JSON.stringify({ some: 'data' }));
+    await stubProvider;
     expect(component).toMatchSnapshot();
   });
 });
