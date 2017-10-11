@@ -2,14 +2,12 @@
 
 exports[`Socket emits data on a timer 1`] = `
 Object {
-  "builds": Array [],
   "projects": Array [],
 }
 `;
 
 exports[`Socket emits data when a new client connects 1`] = `
 Object {
-  "builds": Array [],
   "projects": Array [],
 }
 `;

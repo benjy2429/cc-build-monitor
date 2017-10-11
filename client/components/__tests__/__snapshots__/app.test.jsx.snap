@@ -4,26 +4,8 @@ exports[`App renders correctly 1`] = `
 <div
   className="monitor-wrapper full-height"
 >
-  <div
-    className="recent-builds"
-  >
-    <h1>
-      Recent builds
-    </h1>
-    <BuildWrapper
-      builds={Array []}
-    />
-  </div>
-  <div
-    className="projects"
-  >
-    <h1>
-      0
-       Projects
-    </h1>
-    <ProjectSelector
-      projects={Array []}
-    />
-  </div>
+  <ProjectSelector
+    projects={Array []}
+  />
 </div>
 `;

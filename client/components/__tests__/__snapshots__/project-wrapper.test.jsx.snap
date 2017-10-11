@@ -4,26 +4,37 @@ exports[`Project wrapper renders correctly 1`] = `
 <div
   className="project-wrapper"
 >
-  <Project
-    project={
-      Object {
-        "name": "org/project-1",
+  <div
+    className="project-summary"
+  >
+    <h2
+      className="project-header"
+    >
+      3
+       
+      Unknown
+    </h2>
+    <Project
+      project={
+        Object {
+          "name": "org/project-1",
+        }
       }
-    }
-  />
-  <Project
-    project={
-      Object {
-        "name": "org/project-2",
+    />
+    <Project
+      project={
+        Object {
+          "name": "org/project-2",
+        }
       }
-    }
-  />
-  <Project
-    project={
-      Object {
-        "name": "org/project-3",
+    />
+    <Project
+      project={
+        Object {
+          "name": "org/project-3",
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;

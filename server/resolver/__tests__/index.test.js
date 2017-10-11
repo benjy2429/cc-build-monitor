@@ -11,12 +11,11 @@ describe('Resolve', () => {
     const stubMockFetch = jest.fn().mockImplementation(mockFetch);
     const result = await resolve(stubMockFetch);
     expect(JSON.parse(result)).toMatchSnapshot();
-    expect(stubMockFetch).toHaveBeenCalledTimes(2);
+    expect(stubMockFetch).toHaveBeenCalledTimes(1);
   });
 
   it('resolves data from the cache', async () => {
     cache.put('projects', [{ name: 'project' }]);
-    cache.put('builds', [{ name: 'build' }]);
     const stubMockFetch = jest.fn();
     const result = await resolve(stubMockFetch);
     expect(JSON.parse(result)).toMatchSnapshot();

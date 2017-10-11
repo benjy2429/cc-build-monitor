@@ -1,4 +1,4 @@
-export function decorateProject(project) {
+export default (project) => {
   const {
     _name,
     _activity,
@@ -14,36 +14,4 @@ export function decorateProject(project) {
     buildNumber: _lastBuildLabel,
     buildTime: _lastBuildTime && new Date(_lastBuildTime),
   };
-}
-
-export function decorateBuild(build) {
-  const {
-    reponame,
-    branch,
-    vcs_revision,
-    build_num,
-    status,
-    subject,
-    build_time_millis,
-    user: {
-      avatar_url,
-      name,
-    } = {},
-  } = build;
-
-  return {
-    repo: reponame,
-    branch,
-    buildNumber: build_num,
-    status,
-    buildTime: build_time_millis,
-    commit: {
-      hash: vcs_revision,
-      message: subject,
-    },
-    user: {
-      name,
-      avatar: avatar_url,
-    },
-  };
-}
+};

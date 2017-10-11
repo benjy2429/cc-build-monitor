@@ -1,5 +1,5 @@
 import X2JSLib from 'x2js';
-import { decorateProject } from '../decorator';
+import decorateProject from '../decorator';
 
 const parse = (xml) => {
   const parser = new X2JSLib();

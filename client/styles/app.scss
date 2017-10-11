@@ -1,6 +1,5 @@
 @import 'globals';
 @import 'project';
-@import 'build';
 
 $color-background: #161616;
 
@@ -21,7 +20,6 @@ body {
 }
 
 .monitor-wrapper {
-  display: flex;
   margin: 0 20px;
   overflow: hidden;
   width: calc(100% - 40px);
@@ -35,16 +33,6 @@ body {
     background: linear-gradient(to top, $color-background 20%, transparent);
     height: 80px;
   }
-}
-
-.recent-builds {
-  flex: 2;
-  min-width: 0;
-}
-
-.projects {
-  flex: 1;
-  min-width: 0;
 }
 
 $spinner-size: 60px;

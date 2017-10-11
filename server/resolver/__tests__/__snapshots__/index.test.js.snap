@@ -2,11 +2,6 @@
 
 exports[`Resolve resolves data from the cache 1`] = `
 Object {
-  "builds": Array [
-    Object {
-      "name": "build",
-    },
-  ],
   "projects": Array [
     Object {
       "name": "project",
@@ -17,23 +12,6 @@ Object {
 
 exports[`Resolve resolves data from the source 1`] = `
 Object {
-  "builds": Array [
-    Object {
-      "branch": "master",
-      "buildNumber": 2,
-      "buildTime": 10000,
-      "commit": Object {
-        "hash": "abc123",
-        "message": "Commit message",
-      },
-      "repo": "my-project",
-      "status": "success",
-      "user": Object {
-        "avatar": "https://avatar.url",
-        "name": "Me",
-      },
-    },
-  ],
   "projects": Array [
     Object {
       "activity": "Sleeping",
@@ -62,7 +40,6 @@ Object {
 
 exports[`Resolve returns null if the data cannot be resolved 1`] = `
 Object {
-  "builds": Array [],
   "projects": Array [],
 }
 `;

@@ -1,59 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Decorator Builds decorates the input 1`] = `
-Object {
-  "branch": "master",
-  "buildNumber": 123,
-  "buildTime": 10000,
-  "commit": Object {
-    "hash": "abc123",
-    "message": "my commit",
-  },
-  "repo": "my-project",
-  "status": "success",
-  "user": Object {
-    "avatar": "https://example.com/avatar.png",
-    "name": "Joe Bloggs",
-  },
-}
-`;
-
-exports[`Decorator Builds defaults to undefined 1`] = `
-Object {
-  "branch": undefined,
-  "buildNumber": undefined,
-  "buildTime": undefined,
-  "commit": Object {
-    "hash": undefined,
-    "message": undefined,
-  },
-  "repo": undefined,
-  "status": undefined,
-  "user": Object {
-    "avatar": undefined,
-    "name": undefined,
-  },
-}
-`;
-
-exports[`Decorator Builds ignores extra keys 1`] = `
-Object {
-  "branch": "master",
-  "buildNumber": 123,
-  "buildTime": 10000,
-  "commit": Object {
-    "hash": "abc123",
-    "message": "my commit",
-  },
-  "repo": "my-project",
-  "status": "success",
-  "user": Object {
-    "avatar": "https://example.com/avatar.png",
-    "name": "Joe Bloggs",
-  },
-}
-`;
-
 exports[`Decorator Projects decorates the input 1`] = `
 Object {
   "activity": "activity",
