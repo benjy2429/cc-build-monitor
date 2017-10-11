@@ -1,27 +1,11 @@
-import cache from 'memory-cache';
-import fetcher from '../fetch';
+import defaultFetch from '../fetch';
 import projects from './projects';
+import mockFetch from '../mock-fetch';
 
-const CACHE_LENGTH = parseInt(process.env.POLL_RATE || '60000', 10);
+const fetchFn = process.env.USE_MOCKS === 'true' ? mockFetch : defaultFetch;
 
-const resolve = async (key, resolver, fetch) => {
-  const cachedData = cache.get(key);
-
-  if (cachedData) {
-    return cachedData;
-  }
-
-  try {
-    const freshData = await resolver(fetch);
-    cache.put(key, freshData, CACHE_LENGTH);
-    return freshData;
-  } catch (e) {
-    return null;
-  }
-};
-
-export default async (fetch = fetcher) => (
+export default async (fetch = fetchFn) => (
   JSON.stringify({
-    projects: await resolve('projects', projects, fetch),
+    projects: await projects(fetch),
   })
 );

@@ -5,7 +5,6 @@ import logger from 'koa-logger';
 import webpack from 'koa-webpack';
 import webpackConfig from '../webpack.config';
 import resolve from './resolver';
-import mockFetch from './mock-fetch';
 
 const port = 3000;
 const app = new Koa();
@@ -25,13 +24,11 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(async (ctx) => {
   if (ctx.path === '/fetch') {
-    if (process.env.USE_MOCKS === 'true') {
-      ctx.body = await resolve(mockFetch);
-    }
     ctx.body = await resolve();
   }
 });
 
 app.listen(port);
+
 // eslint-disable-next-line no-console
 console.log(`App running on http://localhost:${port}`);

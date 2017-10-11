@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Resolve resolves data from the cache 1`] = `
-Object {
-  "projects": Array [
-    Object {
-      "name": "project",
-    },
-  ],
-}
-`;
-
-exports[`Resolve resolves data from the source 1`] = `
+exports[`Resolve resolves and returns data 1`] = `
 Object {
   "projects": Array [
     Object {
@@ -35,11 +25,5 @@ Object {
       "name": "project3",
     },
   ],
-}
-`;
-
-exports[`Resolve returns null if the data cannot be resolved 1`] = `
-Object {
-  "projects": Array [],
 }
 `;
