@@ -1,21 +1,6 @@
 import React from 'react';
-import Project from './project';
+import Summary from './summary';
 import projectSelector from '../selectors/project-selector';
-
-const renderSummary = (projects, category) => {
-  if (!projects.length) {
-    return null;
-  }
-
-  return (
-    <div className="project-summary">
-      <h2 className="project-header">{projects.length} {category}</h2>
-      { projects.map(project => (
-        <Project key={project.name} project={project} />
-      )) }
-    </div>
-  );
-};
 
 class ProjectWrapper extends React.PureComponent {
   filterProjects() {
@@ -41,10 +26,10 @@ class ProjectWrapper extends React.PureComponent {
 
     return (
       <div className="project-wrapper">
-        { renderSummary(building, 'Building') }
-        { renderSummary(failing, 'Failing') }
-        { renderSummary(unknown, 'Unknown') }
-        { renderSummary(passing, 'Passing') }
+        <Summary projects={building} category="building" />
+        <Summary projects={failing} category="failing" />
+        <Summary projects={unknown} category="unknown" />
+        <Summary projects={passing} category="passing" />
       </div>
     );
   }

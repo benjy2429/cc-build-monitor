@@ -4,37 +4,49 @@ exports[`Project wrapper renders correctly 1`] = `
 <div
   className="project-wrapper"
 >
-  <div
-    className="project-summary"
-  >
-    <h2
-      className="project-header"
-    >
-      3
-       
-      Unknown
-    </h2>
-    <Project
-      project={
+  <Summary
+    category="building"
+    projects={
+      Array [
         Object {
+          "activity": "Building",
           "name": "org/project-1",
-        }
-      }
-    />
-    <Project
-      project={
+        },
+      ]
+    }
+  />
+  <Summary
+    category="failing"
+    projects={
+      Array [
         Object {
-          "name": "org/project-2",
-        }
-      }
-    />
-    <Project
-      project={
-        Object {
+          "buildStatus": "Failure",
           "name": "org/project-3",
-        }
-      }
-    />
-  </div>
+        },
+      ]
+    }
+  />
+  <Summary
+    category="unknown"
+    projects={
+      Array [
+        Object {
+          "buildStatus": "Unknown",
+          "name": "org/project-4",
+        },
+      ]
+    }
+  />
+  <Summary
+    category="passing"
+    projects={
+      Array [
+        Object {
+          "buildStatus": "Success",
+          "name": "org/project-2",
+        },
+      ]
+    }
+  />
 </div>
 `;

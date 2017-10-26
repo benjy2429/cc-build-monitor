@@ -4,9 +4,10 @@ import { UnwrappedProjectWrapper as ProjectWrapper } from '../project-wrapper';
 
 const defaultProps = {
   projects: [
-    { name: 'org/project-1' },
-    { name: 'org/project-2' },
-    { name: 'org/project-3' },
+    { name: 'org/project-1', activity: 'Building' },
+    { name: 'org/project-2', buildStatus: 'Success' },
+    { name: 'org/project-3', buildStatus: 'Failure' },
+    { name: 'org/project-4', buildStatus: 'Unknown' },
   ],
 };
 

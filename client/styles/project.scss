@@ -1,39 +1,5 @@
-$project-size: 50px;
-
 .project-wrapper {
   display: flex;
-  text-align: center;
+  flex-direction: column;
   height: 100%;
-  min-width: 0;
-}
-
-.project-summary {
-  flex: 1;
-  margin: 0 20px;
-  min-width: 0;
-}
-
-.project-building {
-  animation: $animation-building;
-}
-
-.project-success {
-  background-color: $color-success;
-}
-
-.project-failure {
-  background-color: $color-failure;
-}
-
-.project-unknown {
-  background-color: $color-unknown;
-}
-
-.project-bar {
-  height: $project-size;
-  line-height: $project-size;
-  margin: 10px 0;
-  padding: 0 20px;
-  font-size: $project-size / 2;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }

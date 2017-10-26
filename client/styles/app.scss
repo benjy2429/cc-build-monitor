@@ -1,4 +1,5 @@
 @import 'globals';
+@import 'summary';
 @import 'project';
 
 $color-background: #161616;
@@ -23,16 +24,6 @@ body {
   margin: 0 20px;
   overflow: hidden;
   width: calc(100% - 40px);
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, $color-background 20%, transparent);
-    height: 80px;
-  }
 }
 
 $spinner-size: 60px;

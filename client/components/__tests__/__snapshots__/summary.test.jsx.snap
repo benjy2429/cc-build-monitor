@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary renders correctly 1`] = `
+<div
+  className="summary summary-passing"
+>
+  <div
+    className="summary-heading"
+  >
+    2
+     
+    passing
+  </div>
+  <div
+    className="summary-details"
+  >
+    org/project-1
+  </div>
+</div>
+`;
