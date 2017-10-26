@@ -3,26 +3,8 @@ import Summary from './summary';
 import projectSelector from '../selectors/project-selector';
 
 class ProjectWrapper extends React.PureComponent {
-  filterProjects() {
-    const filtered = { building: [], passing: [], failing: [], unknown: [] };
-
-    this.props.projects.forEach((project) => {
-      if (project.activity === 'Building') {
-        filtered.building.push(project);
-        return;
-      }
-      switch (project.buildStatus) {
-        case 'Success': filtered.passing.push(project); break;
-        case 'Failure': filtered.failing.push(project); break;
-        default: filtered.unknown.push(project); break;
-      }
-    });
-
-    return filtered;
-  }
-
   render() {
-    const { building, passing, failing, unknown } = this.filterProjects();
+    const { building, passing, failing, unknown } = this.props.projects;
 
     return (
       <div className="project-wrapper">

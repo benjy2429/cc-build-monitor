@@ -9,7 +9,6 @@ exports[`Project wrapper renders correctly 1`] = `
     projects={
       Array [
         Object {
-          "activity": "Building",
           "name": "org/project-1",
         },
       ]
@@ -20,7 +19,6 @@ exports[`Project wrapper renders correctly 1`] = `
     projects={
       Array [
         Object {
-          "buildStatus": "Failure",
           "name": "org/project-3",
         },
       ]
@@ -31,7 +29,6 @@ exports[`Project wrapper renders correctly 1`] = `
     projects={
       Array [
         Object {
-          "buildStatus": "Unknown",
           "name": "org/project-4",
         },
       ]
@@ -42,7 +39,6 @@ exports[`Project wrapper renders correctly 1`] = `
     projects={
       Array [
         Object {
-          "buildStatus": "Success",
           "name": "org/project-2",
         },
       ]
