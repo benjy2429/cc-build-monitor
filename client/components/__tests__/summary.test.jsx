@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Summary from '../summary';
 
 const defaultProps = {
@@ -16,6 +16,33 @@ describe('Summary', () => {
       <Summary {...defaultProps} />,
     );
 
+    expect(component).toMatchSnapshot();
+  });
+
+  it('does not render with no projects', () => {
+    const component = shallow(
+      <Summary projects={[]} />,
+    );
+
+    expect(component.html()).toEqual(null);
+  });
+
+  it('displays the second project after a timeout', () => {
+    jest.useFakeTimers();
+    const component = mount(
+      <Summary {...defaultProps} />,
+    );
+    jest.runOnlyPendingTimers();
+    expect(component).toMatchSnapshot();
+  });
+
+  it('loops back to the first project', () => {
+    jest.useFakeTimers();
+    const component = mount(
+      <Summary {...defaultProps} />,
+    );
+    jest.runOnlyPendingTimers();
+    jest.runOnlyPendingTimers();
     expect(component).toMatchSnapshot();
   });
 });

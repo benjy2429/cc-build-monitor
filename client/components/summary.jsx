@@ -1,6 +1,41 @@
 import React from 'react';
 
-class Summary extends React.PureComponent {
+class Summary extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      intervalId: null,
+      projectIndex: 0,
+    };
+  }
+
+  componentDidMount() {
+    const intervalId = setInterval(this.tick.bind(this), 3000);
+    this.setState({ intervalId });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId);
+  }
+
+  tick() {
+    const newIndex = (this.state.projectIndex + 1) % this.props.projects.length;
+    this.setState({
+      projectIndex: newIndex,
+    });
+  }
+
+  renderDetails() {
+    const { projects } = this.props;
+    const { projectIndex: index } = this.state;
+
+    if (!projects.length) {
+      return null;
+    }
+
+    return projects[index].name;
+  }
+
   render() {
     const { projects, category } = this.props;
 
@@ -14,7 +49,7 @@ class Summary extends React.PureComponent {
           {projects.length} {category}
         </div>
         <div className="summary-details">
-          {projects[0].name}
+          {this.renderDetails()}
         </div>
       </div>
     );
