@@ -21,4 +21,14 @@ describe('Loader', () => {
     await stubProvider;
     expect(component).toMatchSnapshot();
   });
+
+  it('fetches new data on a timer', async () => {
+    jest.useFakeTimers();
+    const component = mount(
+      <LoaderComponent />,
+    );
+    await stubProvider;
+    jest.runOnlyPendingTimers();
+    expect(component).toMatchSnapshot();
+  });
 });

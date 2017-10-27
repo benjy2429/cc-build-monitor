@@ -26,8 +26,9 @@ body {
   width: calc(100% - 40px);
 }
 
-$spinner-size: 60px;
-$spinner-weight: 7px;
+$spinner-size: 40px;
+$spinner-weight: 5px;
+$spinner-padding: 20px;
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -36,14 +37,12 @@ $spinner-weight: 7px;
 
 .loading-spinner {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -$spinner-size;
-  margin-left: -$spinner-size;
-  height: $spinner-size;
-  width: $spinner-size;
+  top: 40px;
+  right: 40px;
+  height: $spinner-size - ($spinner-weight * 2);
+  width: $spinner-size - ($spinner-weight * 2);
   border-radius: 50%;
-  border: $spinner-weight solid rgba(255, 255, 255, 0.3);
+  border: $spinner-weight solid transparent;
   border-top: $spinner-weight solid #fff;
   animation: spin 1s linear 0s infinite;
 }

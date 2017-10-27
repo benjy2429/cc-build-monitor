@@ -1,21 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader renders the component after receiving data 1`] = `
+exports[`Loader fetches new data on a timer 1`] = `
 <Loader>
-  <WrappedComponent
-    some="data"
+  <div
+    className="full-height"
   >
     <div
-      className="wrapped-component"
+      className="loading-spinner"
     />
-  </WrappedComponent>
+    <WrappedComponent
+      some="data"
+    >
+      <div
+        className="wrapped-component"
+      />
+    </WrappedComponent>
+  </div>
+</Loader>
+`;
+
+exports[`Loader renders the component after receiving data 1`] = `
+<Loader>
+  <div
+    className="full-height"
+  >
+    <WrappedComponent
+      some="data"
+    >
+      <div
+        className="wrapped-component"
+      />
+    </WrappedComponent>
+  </div>
 </Loader>
 `;
 
 exports[`Loader renders the spinner initially 1`] = `
 <Loader>
   <div
-    className="loading-spinner"
-  />
+    className="full-height"
+  >
+    <div
+      className="loading-spinner"
+    />
+  </div>
 </Loader>
 `;

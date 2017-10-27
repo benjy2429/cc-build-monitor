@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+const refreshRate = 60000;
 const defaultFetch = () => axios.get('/fetch');
 
 export default (Component, fetch = defaultFetch) => (
@@ -9,21 +10,30 @@ export default (Component, fetch = defaultFetch) => (
       super(props);
       this.state = {
         loading: true,
-        data: {},
+        data: null,
       };
     }
 
-    async componentDidMount() {
+    async fetchData() {
+      this.setState({ loading: true });
       const res = await fetch();
       this.setState({ loading: false, data: res.data });
+    }
+
+    componentDidMount() {
+      this.fetchData();
+      this.intervalId = setInterval(this.fetchData.bind(this), refreshRate);
     }
 
     render() {
       const { loading, data } = this.state;
 
-      return loading ?
-        <div className="loading-spinner" /> :
-        <Component {...this.props} {...data} />;
+      return (
+        <div className="full-height">
+          { loading && <div className="loading-spinner" /> }
+          { data && <Component {...this.props} {...data} /> }
+        </div>
+      );
     }
   }
 );
