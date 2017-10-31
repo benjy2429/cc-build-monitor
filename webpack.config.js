@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = require('./config');
 
 module.exports = {
   entry: './client/index.jsx',
@@ -35,6 +36,7 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },
+      config,
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',

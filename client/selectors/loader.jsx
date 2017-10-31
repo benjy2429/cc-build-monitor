@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import Overlay from '../components/overlay';
 
-const refreshRate = 60000;
 const defaultFetch = () => axios({
   url: '/fetch',
   timeout: 5000,
@@ -35,7 +34,7 @@ export default (Component, fetch = defaultFetch) => (
 
     componentDidMount() {
       this.fetchData();
-      this.intervalId = setInterval(this.fetchData.bind(this), refreshRate);
+      this.intervalId = setInterval(this.fetchData.bind(this), config.refreshRate);
     }
 
     componentWillUnmount() {

@@ -1,8 +1,9 @@
 import defaultFetch from '../fetch';
 import projects from './projects';
 import mockFetch from '../mock-fetch';
+import config from '../../config';
 
-const fetchFn = process.env.USE_MOCKS === 'true' ? mockFetch : defaultFetch;
+const fetchFn = config.useMocks ? mockFetch : defaultFetch;
 
 export default async (fetch = fetchFn) => (
   JSON.stringify({

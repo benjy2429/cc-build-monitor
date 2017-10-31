@@ -18,3 +18,4 @@ globals:
   fetch: true
   beforeEach: true
   afterEach: true
+  config: true

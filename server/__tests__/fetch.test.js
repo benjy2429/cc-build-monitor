@@ -2,8 +2,8 @@ import axios from 'axios';
 import fetch from '../fetch';
 
 const defaultConfig = {
-  CIRCLE_ENDPOINT: 'endpoint',
-  CIRCLE_TOKEN: 'token',
+  endpoint: 'endpoint',
+  token: 'token',
 };
 
 describe('Fetch', () => {
@@ -22,7 +22,7 @@ describe('Fetch', () => {
 
   it('returns an empty array when the token is missing', async () => {
     await expect(
-      fetch('/', { CIRCLE_ENDPOINT: 'endpoint' }),
+      fetch('/', { endpoint: 'endpoint' }),
     ).rejects.toHaveProperty(
       'message',
       'CIRCLE_TOKEN is not set',

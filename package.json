@@ -25,7 +25,8 @@
     "lint-css-fix": "npm run lint-css -- --fix"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "devDependencies": {
     "babel-cli": "^6.24.1",

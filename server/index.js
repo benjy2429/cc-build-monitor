@@ -6,7 +6,7 @@ import webpack from 'koa-webpack';
 import webpackConfig from '../webpack.config';
 import resolve from './resolver';
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = new Koa();
 
 app.use(logger());
