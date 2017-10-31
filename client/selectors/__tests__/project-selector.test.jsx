@@ -27,10 +27,10 @@ describe('Project Selector', () => {
 
   it('sorts projects by build status', () => {
     const projects = [
-      { buildStatus: 'SomethingElse' },
-      { buildStatus: 'Success' },
-      { buildStatus: 'Failure' },
-      { buildStatus: 'Unknown' },
+      { lastBuildStatus: 'SomethingElse' },
+      { lastBuildStatus: 'Success' },
+      { lastBuildStatus: 'Failure' },
+      { lastBuildStatus: 'Unknown' },
     ];
     const component = shallow(
       <ProjectSelector projects={projects} />,

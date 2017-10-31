@@ -1,13 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader fetches new data on a timer 1`] = `
+exports[`Loader renders an overlay for fetch errors 1`] = `
 <Loader>
   <div
     className="full-height"
   >
-    <div
-      className="loading-spinner"
-    />
+    <Overlay
+      subtitle="fetch error"
+      title="Error fetching data"
+    >
+      <div
+        className="overlay"
+      >
+        <div
+          className="overlay-wrapper"
+        >
+          <div
+            className="overlay-title"
+          >
+            Error fetching data
+          </div>
+          <div
+            className="overlay-subtitle"
+          >
+            fetch error
+          </div>
+        </div>
+      </div>
+    </Overlay>
+  </div>
+</Loader>
+`;
+
+exports[`Loader renders an overlay for received errors 1`] = `
+<Loader>
+  <div
+    className="full-height"
+  >
+    <Overlay
+      subtitle="received error"
+      title="Error fetching data"
+    >
+      <div
+        className="overlay"
+      >
+        <div
+          className="overlay-wrapper"
+        >
+          <div
+            className="overlay-title"
+          >
+            Error fetching data
+          </div>
+          <div
+            className="overlay-subtitle"
+          >
+            received error
+          </div>
+        </div>
+      </div>
+    </Overlay>
+  </div>
+</Loader>
+`;
+
+exports[`Loader renders the component after receiving data 1`] = `
+<Loader>
+  <div
+    className="full-height"
+  >
     <WrappedComponent
       some="data"
     >
@@ -19,11 +80,14 @@ exports[`Loader fetches new data on a timer 1`] = `
 </Loader>
 `;
 
-exports[`Loader renders the component after receiving data 1`] = `
+exports[`Loader renders the component and spinner when re-fetching 1`] = `
 <Loader>
   <div
     className="full-height"
   >
+    <div
+      className="loading-spinner"
+    />
     <WrappedComponent
       some="data"
     >

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectWrapper from './project-wrapper';
+import Overlay from './overlay';
 import loader from '../selectors/loader';
 
 class App extends React.PureComponent {
@@ -7,7 +8,10 @@ class App extends React.PureComponent {
     const { projects = [] } = this.props;
     return (
       <div className="monitor-wrapper full-height">
-        <ProjectWrapper projects={projects} />
+        { projects.length ?
+          <ProjectWrapper projects={projects} /> :
+          <Overlay title="No projects to show" subtitle="Is your API token correct?" />
+        }
       </div>
     );
   }

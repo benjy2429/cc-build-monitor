@@ -1,11 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders correctly 1`] = `
+exports[`App renders an overlay for no projects 1`] = `
+<div
+  className="monitor-wrapper full-height"
+>
+  <Overlay
+    subtitle="Is your API token correct?"
+    title="No projects to show"
+  />
+</div>
+`;
+
+exports[`App renders projects correctly 1`] = `
 <div
   className="monitor-wrapper full-height"
 >
   <ProjectSelector
-    projects={Array []}
+    projects={
+      Array [
+        Object {
+          "name": "project1",
+        },
+        Object {
+          "name": "project2",
+        },
+      ]
+    }
   />
 </div>
 `;

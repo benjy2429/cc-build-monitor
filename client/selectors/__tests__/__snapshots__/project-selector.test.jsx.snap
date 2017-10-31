@@ -38,20 +38,20 @@ Object {
   "building": Array [],
   "failing": Array [
     Object {
-      "buildStatus": "Failure",
+      "lastBuildStatus": "Failure",
     },
   ],
   "passing": Array [
     Object {
-      "buildStatus": "Success",
+      "lastBuildStatus": "Success",
     },
   ],
   "unknown": Array [
     Object {
-      "buildStatus": "SomethingElse",
+      "lastBuildStatus": "SomethingElse",
     },
     Object {
-      "buildStatus": "Unknown",
+      "lastBuildStatus": "Unknown",
     },
   ],
 }

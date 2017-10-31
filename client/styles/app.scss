@@ -52,3 +52,32 @@ $spinner-padding: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+
+  .overlay-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  .overlay-title {
+    top: 50%;
+    font-size: 5vw;
+  }
+
+  .overlay-subtitle {
+    font-size: 2vw;
+  }
+}

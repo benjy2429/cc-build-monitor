@@ -9,13 +9,11 @@ export default async function fetch(path, config = process.env) {
 
 
     if (!endpoint) {
-      console.error('CIRCLE_ENDPOINT is not set');
-      return [];
+      throw new Error('CIRCLE_ENDPOINT is not set');
     }
 
     if (!token) {
-      console.error('CIRCLE_TOKEN is not set');
-      return [];
+      throw new Error('CIRCLE_TOKEN is not set');
     }
 
     const res = await axios.get(`${endpoint}${path}`, {
@@ -26,6 +24,6 @@ export default async function fetch(path, config = process.env) {
     return res.data;
   } catch (err) {
     console.error('Upstream error:', err.message);
-    return [];
+    throw err;
   }
 }

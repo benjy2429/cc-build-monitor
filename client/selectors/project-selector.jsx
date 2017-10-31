@@ -8,7 +8,7 @@ const filterProjects = (projects) => {
       filtered.building.push(project);
       return;
     }
-    switch (project.buildStatus) {
+    switch (project.lastBuildStatus) {
       case 'Success': filtered.passing.push(project); break;
       case 'Failure': filtered.failing.push(project); break;
       default: filtered.unknown.push(project); break;

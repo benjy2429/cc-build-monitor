@@ -1,33 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Resolve projects parses and decorates xml data 1`] = `
-Array [
-  Object {
-    "activity": "Sleeping",
-    "buildNumber": "1",
-    "buildStatus": "Success",
-    "buildTime": 2000-01-01T12:00:00.000Z,
-    "name": "project1",
-  },
-  Object {
-    "activity": "Sleeping",
-    "buildNumber": "13",
-    "buildStatus": "Failure",
-    "buildTime": 2000-01-01T12:00:00.000Z,
-    "name": "project2",
-  },
-  Object {
-    "activity": "Building",
-    "buildNumber": "42",
-    "buildStatus": "Unknown",
-    "buildTime": 2000-01-01T12:00:00.000Z,
-    "name": "project3",
-  },
-]
+exports[`Resolve projects parses xml data 1`] = `
+Object {
+  "projects": Array [
+    Object {
+      "activity": "Sleeping",
+      "lastBuildLabel": "1",
+      "lastBuildStatus": "Success",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project1",
+    },
+    Object {
+      "activity": "Sleeping",
+      "lastBuildLabel": "13",
+      "lastBuildStatus": "Failure",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project2",
+    },
+    Object {
+      "activity": "Building",
+      "lastBuildLabel": "42",
+      "lastBuildStatus": "Unknown",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project3",
+    },
+  ],
+}
 `;
 
-exports[`Resolve projects returns an empty array when no data is fetched 1`] = `Array []`;
+exports[`Resolve projects returns an empty array when no data is fetched 1`] = `
+Object {
+  "projects": Array [],
+}
+`;
 
-exports[`Resolve projects returns an empty array when the fetch fails 1`] = `Array []`;
+exports[`Resolve projects returns an error when the fetch fails 1`] = `
+Object {
+  "error": "an error",
+}
+`;
 
-exports[`Resolve projects returns an empty array when the xml is malformed 1`] = `Array []`;
+exports[`Resolve projects returns an error when the xml is malformed 1`] = `
+Object {
+  "error": "Error parsing response",
+}
+`;

@@ -14,17 +14,23 @@ describe('Fetch', () => {
   });
 
   it('returns an empty array when the endpoint is missing', async () => {
-    const result = await fetch('/', {});
-    expect(result).toEqual([]);
+    await expect(fetch('/', {})).rejects.toHaveProperty(
+      'message',
+      'CIRCLE_ENDPOINT is not set',
+    );
   });
 
   it('returns an empty array when the token is missing', async () => {
-    const result = await fetch('/', { CIRCLE_ENDPOINT: 'endpoint' });
-    expect(result).toEqual([]);
+    await expect(
+      fetch('/', { CIRCLE_ENDPOINT: 'endpoint' }),
+    ).rejects.toHaveProperty(
+      'message',
+      'CIRCLE_TOKEN is not set',
+    );
   });
 
   it('sets the path and token for the request', async () => {
-    axios.get = jest.fn(() => Promise.resolve());
+    axios.get = jest.fn(() => Promise.resolve({ data: '' }));
     await fetch('/', defaultConfig);
     expect(axios.get.mock.calls[0][0]).toEqual('endpoint/');
     expect(axios.get.mock.calls[0][1]).toEqual({
@@ -40,9 +46,11 @@ describe('Fetch', () => {
     expect(result).toEqual('data');
   });
 
-  it('returns an empty array if the request fails', async () => {
-    axios.get = jest.fn(() => Promise.reject('error'));
-    const result = await fetch('/', defaultConfig);
-    expect(result).toEqual([]);
+  it('throws an error if the request fails', async () => {
+    axios.get = jest.fn(() => Promise.reject(Error('an error message')));
+    await expect(fetch('/', defaultConfig)).rejects.toHaveProperty(
+      'message',
+      'an error message',
+    );
   });
 });

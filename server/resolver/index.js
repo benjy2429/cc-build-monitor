@@ -6,6 +6,6 @@ const fetchFn = process.env.USE_MOCKS === 'true' ? mockFetch : defaultFetch;
 
 export default async (fetch = fetchFn) => (
   JSON.stringify({
-    projects: await projects(fetch),
+    ...await projects(fetch),
   })
 );
