@@ -27,4 +27,26 @@ describe('Resolve projects', () => {
     const result = await resolveProjects(mockFetch);
     expect(result).toMatchSnapshot();
   });
+
+  it('excludes projects in the blacklist', async () => {
+    config.blacklist = ['project1'];
+    const mockFetch = () => Promise.resolve(projectMock);
+    const result = await resolveProjects(mockFetch);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('only includes projects in the whitelist', async () => {
+    config.whitelist = ['project1'];
+    const mockFetch = () => Promise.resolve(projectMock);
+    const result = await resolveProjects(mockFetch);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('prioritises the whitelist over the blacklist', async () => {
+    config.blacklist = ['project1'];
+    config.whitelist = ['project2'];
+    const mockFetch = () => Promise.resolve(projectMock);
+    const result = await resolveProjects(mockFetch);
+    expect(result).toMatchSnapshot();
+  });
 });

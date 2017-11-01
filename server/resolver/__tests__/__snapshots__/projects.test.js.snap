@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Resolve projects excludes projects in the blacklist 1`] = `
+Object {
+  "projects": Array [
+    Object {
+      "activity": "Sleeping",
+      "lastBuildLabel": "13",
+      "lastBuildStatus": "Failure",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project2",
+    },
+    Object {
+      "activity": "Building",
+      "lastBuildLabel": "42",
+      "lastBuildStatus": "Unknown",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project3",
+    },
+  ],
+}
+`;
+
+exports[`Resolve projects only includes projects in the whitelist 1`] = `
+Object {
+  "projects": Array [
+    Object {
+      "activity": "Sleeping",
+      "lastBuildLabel": "1",
+      "lastBuildStatus": "Success",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project1",
+    },
+  ],
+}
+`;
+
 exports[`Resolve projects parses xml data 1`] = `
 Object {
   "projects": Array [
@@ -23,6 +58,20 @@ Object {
       "lastBuildStatus": "Unknown",
       "lastBuildTime": "2000-01-01T12:00:00.000Z",
       "name": "project3",
+    },
+  ],
+}
+`;
+
+exports[`Resolve projects prioritises the whitelist over the blacklist 1`] = `
+Object {
+  "projects": Array [
+    Object {
+      "activity": "Sleeping",
+      "lastBuildLabel": "13",
+      "lastBuildStatus": "Failure",
+      "lastBuildTime": "2000-01-01T12:00:00.000Z",
+      "name": "project2",
     },
   ],
 }

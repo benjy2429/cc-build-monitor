@@ -36,7 +36,10 @@ Environment variable | Description | Default value
 `PORT`|Run the server on a different port|`3000`
 `REFRESH_RATE`|How often to fetch new data in milliseconds|`60000`
 `STRIP_ORGS`|Don't include the organisation when displaying projects|`false`
+`WHITELIST`|Comma separated list of project names to show|-
+`BLACKLIST`|Comma separated list of project names to exclude|-
 
+Note: If both a whitelist and blacklist are specified, the whitelist will take priority.
 
 ## Testing
 
