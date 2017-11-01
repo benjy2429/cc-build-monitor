@@ -3,4 +3,5 @@ module.exports = {
   token: process.env.CIRCLE_TOKEN,
   useMocks: process.env.USE_MOCKS === 'true',
   refreshRate: parseInt(process.env.REFRESH_RATE, 10) || 60000,
+  stripOrgs: process.env.STRIP_ORGS === 'true',
 };

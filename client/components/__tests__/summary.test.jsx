@@ -45,4 +45,14 @@ describe('Summary', () => {
     jest.runOnlyPendingTimers();
     expect(component).toMatchSnapshot();
   });
+
+  it('strips the org when specified', () => {
+    config.stripOrgs = true;
+    const component = shallow(
+      <Summary {...defaultProps} />,
+    );
+
+    expect(component).toMatchSnapshot();
+  });
 });
+

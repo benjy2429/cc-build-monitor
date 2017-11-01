@@ -32,9 +32,10 @@ Options can be specified using environment variables. Possible options include:
 Environment variable | Description | Default value
 ---|---|---
 `CIRCLE_ENDPOINT`|The endpoint to fetch data from|`https://circleci.com`
-`CIRCLE_TOKEN`|Access token for CircleCI|
+`CIRCLE_TOKEN`|Access token for CircleCI|-
 `PORT`|Run the server on a different port|`3000`
 `REFRESH_RATE`|How often to fetch new data in milliseconds|`60000`
+`STRIP_ORGS`|Don't include the organisation when displaying projects|`false`
 
 
 ## Testing

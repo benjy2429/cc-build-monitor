@@ -84,3 +84,22 @@ exports[`Summary renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`Summary strips the org when specified 1`] = `
+<div
+  className="summary summary-passing"
+>
+  <div
+    className="summary-heading"
+  >
+    2
+     
+    passing
+  </div>
+  <div
+    className="summary-details"
+  >
+    project-1
+  </div>
+</div>
+`;

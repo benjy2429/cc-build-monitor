@@ -1,5 +1,9 @@
 import React from 'react';
 
+const formatName = name => (
+  config.stripOrgs ? name.substring(name.indexOf('/') + 1, name.length) : name
+);
+
 class Summary extends React.Component {
   constructor() {
     super();
@@ -33,7 +37,7 @@ class Summary extends React.Component {
       return null;
     }
 
-    return projects[index].name;
+    return formatName(projects[index].name);
   }
 
   render() {
