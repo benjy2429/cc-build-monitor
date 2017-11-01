@@ -27,7 +27,11 @@ Access the build monitor at http://localhost:3000
 
 ## Configuration
 
-Options can be specified using environment variables. Possible options include:
+Options can be specified using environment variables. This project uses [dotenv](https://www.npmjs.com/package/dotenv) to make local development easier.
+
+Copy `.env.example` to a new file `.env` and set your config options there. These will be loaded automatically when starting the server.
+
+Possible options include:
 
 Environment variable | Description | Default value
 ---|---|---
@@ -39,7 +43,7 @@ Environment variable | Description | Default value
 `WHITELIST`|Comma separated list of project names to show|-
 `BLACKLIST`|Comma separated list of project names to exclude|-
 
-Note: If both a whitelist and blacklist are specified, the whitelist will take priority.
+_Note: If both a whitelist and blacklist are specified, the whitelist will take priority._
 
 ## Testing
 

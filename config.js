@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line
+  require('dotenv').config();
+}
+
 module.exports = {
   endpoint: process.env.CIRCLE_ENDPOINT || 'https://circleci.com',
   token: process.env.CIRCLE_TOKEN,
