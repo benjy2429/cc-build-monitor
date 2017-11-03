@@ -47,7 +47,7 @@ describe('Summary', () => {
   });
 
   it('strips the org when specified', () => {
-    config.stripOrgs = true;
+    window.config.stripOrgs = true;
     const component = shallow(
       <Summary {...defaultProps} />,
     );

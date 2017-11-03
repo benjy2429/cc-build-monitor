@@ -1,7 +1,7 @@
 import React from 'react';
 
 const formatName = name => (
-  config.stripOrgs ? name.substring(name.indexOf('/') + 1, name.length) : name
+  window.config.stripOrgs ? name.substring(name.indexOf('/') + 1, name.length) : name
 );
 
 class Summary extends React.Component {

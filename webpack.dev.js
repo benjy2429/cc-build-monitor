@@ -1,15 +1,20 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config');
 
-module.exports = {
-  entry: './client/index.jsx',
+const browserConfig = {
+  entry: [
+    'webpack-hot-middleware/client',
+    './client/index.jsx',
+  ],
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('dist/assets'),
+    publicPath: '/assets',
     filename: 'bundle.js',
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -29,21 +34,19 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
   },
   devServer: {
-    contentBase: path.resolve('client'),
+    contentBase: path.resolve('client/'),
+    hot: true,
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-      },
+      'process.env.NODE_ENV': JSON.stringify('development'),
       config,
     }),
-    new HtmlWebpackPlugin({
-      template: './client/index.html',
-      filename: 'index.html',
-      inject: 'body',
-    }),
+    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('bundle.css'),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 };
+
+module.exports = browserConfig;
+

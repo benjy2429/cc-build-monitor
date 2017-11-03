@@ -34,7 +34,7 @@ export default (Component, fetch = defaultFetch) => (
 
     componentDidMount() {
       this.fetchData();
-      this.intervalId = setInterval(this.fetchData.bind(this), config.refreshRate);
+      this.intervalId = setInterval(this.fetchData.bind(this), window.config.refreshRate);
     }
 
     componentWillUnmount() {
