@@ -1,5 +1,5 @@
 import { parseString } from 'xml2js';
-import config from '../../config';
+import { serverConfig } from '../../config';
 
 const promiseParser = xml => new Promise((resolve, reject) => (
   parseString(
@@ -19,7 +19,7 @@ const parse = (data) => {
   return project;
 };
 
-const filter = (projects) => {
+const filter = (projects, config) => {
   const { whitelist, blacklist } = config;
   if (whitelist.length) {
     return projects.filter(({ name }) => whitelist.includes(name));
@@ -30,11 +30,12 @@ const filter = (projects) => {
   return projects;
 };
 
-export default fetch => (
+export default (fetch, config = serverConfig) => (
   fetch('/cc.xml')
     .then(promiseParser)
     .then(parse)
-    .then(filter)
+    .then(projects => filter(projects, config))
     .then(projects => ({ projects }))
     .catch(error => ({ error: error.message }))
 );
+

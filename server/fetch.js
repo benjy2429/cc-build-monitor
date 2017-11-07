@@ -1,9 +1,9 @@
 import axios from 'axios';
-import config from '../config';
+import { serverConfig } from '../config';
 
-export default async function fetch(path, apiConfig = config) {
+export default async function fetch(path, config = serverConfig) {
   try {
-    const { endpoint, token } = apiConfig;
+    const { endpoint, token } = config;
 
     if (!endpoint) {
       throw new Error('CIRCLE_ENDPOINT is not set');

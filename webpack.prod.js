@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const config = require('./config');
 
 const browserConfig = {
   entry: './client/index.jsx',
@@ -36,7 +35,6 @@ const browserConfig = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      config,
     }),
     new ExtractTextPlugin('bundle.css'),
     new webpack.optimize.ModuleConcatenationPlugin(),

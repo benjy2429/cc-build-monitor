@@ -29,24 +29,23 @@ describe('Resolve projects', () => {
   });
 
   it('excludes projects in the blacklist', async () => {
-    window.config.blacklist = ['project1'];
+    const mockConfig = { blacklist: ['project1'], whitelist: [] };
     const mockFetch = () => Promise.resolve(projectMock);
-    const result = await resolveProjects(mockFetch);
+    const result = await resolveProjects(mockFetch, mockConfig);
     expect(result).toMatchSnapshot();
   });
 
   it('only includes projects in the whitelist', async () => {
-    window.config.whitelist = ['project1'];
+    const mockConfig = { blacklist: [], whitelist: ['project1'] };
     const mockFetch = () => Promise.resolve(projectMock);
-    const result = await resolveProjects(mockFetch);
+    const result = await resolveProjects(mockFetch, mockConfig);
     expect(result).toMatchSnapshot();
   });
 
   it('prioritises the whitelist over the blacklist', async () => {
-    window.config.blacklist = ['project1'];
-    window.config.whitelist = ['project2'];
+    const mockConfig = { blacklist: ['project1'], whitelist: ['project2'] };
     const mockFetch = () => Promise.resolve(projectMock);
-    const result = await resolveProjects(mockFetch);
+    const result = await resolveProjects(mockFetch, mockConfig);
     expect(result).toMatchSnapshot();
   });
 });

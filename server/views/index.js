@@ -1,4 +1,4 @@
-import config from '../../config';
+import { clientConfig } from '../../config';
 
 export default `
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ export default `
   <body>
     <main id="app"></main>
     <script>
-      window.config = ${JSON.stringify(config)};
+      window.config = ${JSON.stringify(clientConfig)};
     </script>
     <script src="/assets/bundle.js"></script>
   </body>

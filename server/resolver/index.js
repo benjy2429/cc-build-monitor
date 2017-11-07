@@ -1,9 +1,9 @@
 import defaultFetch from '../fetch';
 import projects from './projects';
 import mockFetch from '../mock-fetch';
-import config from '../../config';
+import { serverConfig } from '../../config';
 
-const fetchFn = config.useMocks ? mockFetch : defaultFetch;
+const fetchFn = serverConfig.useMocks ? mockFetch : defaultFetch;
 
 export default async (fetch = fetchFn) => (
   JSON.stringify({

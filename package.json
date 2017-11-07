@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "start-dev": "`npm bin`/babel-node server/index.js",
+    "start-dev": "NODE_ENV=development `npm bin`/babel-node server/index.js",
     "start-mock": "USE_MOCKS=true npm run start-dev",
     "build": "`npm bin`/webpack --config webpack.prod.js",
     "clean": "rm -rf dist/",
