@@ -5,8 +5,7 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = {
   serverConfig: {
-    endpoint: process.env.CIRCLE_ENDPOINT || 'https://circleci.com',
-    token: process.env.CIRCLE_TOKEN,
+    endpoint: process.env.ENDPOINT,
     useMocks: process.env.USE_MOCKS === 'true',
     blacklist: process.env.BLACKLIST ? process.env.BLACKLIST.split(',') : [],
     whitelist: process.env.WHITELIST ? process.env.WHITELIST.split(',') : [],

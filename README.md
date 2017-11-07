@@ -1,8 +1,10 @@
-[![CircleCI](https://circleci.com/gh/benjy2429/circleci-build-monitor-v2/tree/master.svg?style=shield)](https://circleci.com/gh/benjy2429/circleci-build-monitor-v2/tree/master)
+[![CircleCI](https://circleci.com/gh/benjy2429/cc-build-monitor-v2/tree/master.svg?style=shield)](https://circleci.com/gh/benjy2429/cc-build-monitor-v2/tree/master)
 
-# CircleCI Build Monitor
+# CC Build Monitor
 
-A build monitor app for CircleCI projects built with Koa and ReactJS. Inspired by the [Jenkins Build Monitor Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Build+Monitor+Plugin).
+A Koa/ReactJS app to monitor the status of continuous integration builds.
+
+This currently supports CircleCI but will be expanded to support any CI server that implements the [Multiple Project Summary Reporting Standard](https://github.com/erikdoe/ccmenu/wiki/Multiple-Project-Summary-Reporting-Standard).
 
 ## Dependencies
 
@@ -35,8 +37,7 @@ Possible options include:
 
 Environment variable | Description | Default value
 ---|---|---
-`CIRCLE_ENDPOINT`|The endpoint to fetch data from|`https://circleci.com`
-`CIRCLE_TOKEN`|Access token for CircleCI|-
+`ENDPOINT`|The endpoint to fetch data from|-
 `PORT`|Run the server on a different port|`3000`
 `REFRESH_RATE`|How often to fetch new data in milliseconds|`60000`
 `STRIP_ORGS`|Don't include the organisation when displaying projects|`false`

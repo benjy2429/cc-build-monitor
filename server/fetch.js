@@ -1,23 +1,15 @@
 import axios from 'axios';
 import { serverConfig } from '../config';
 
-export default async function fetch(path, config = serverConfig) {
+export default async function fetch(config = serverConfig) {
   try {
-    const { endpoint, token } = config;
+    const { endpoint } = config;
 
     if (!endpoint) {
-      throw new Error('CIRCLE_ENDPOINT is not set');
+      throw new Error('ENDPOINT is not set');
     }
 
-    if (!token) {
-      throw new Error('CIRCLE_TOKEN is not set');
-    }
-
-    const res = await axios.get(`${endpoint}${path}`, {
-      params: {
-        'circle-token': token,
-      },
-    });
+    const res = await axios.get(endpoint);
     return res.data;
   } catch (err) {
     console.error('Upstream error:', err.message);

@@ -4,7 +4,7 @@ export default `
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CircleCI Build Monitor</title>
+    <title>CC Build Monitor</title>
     <link rel="stylesheet" type="text/css" href="/assets/bundle.css" />
   </head>
   <body>

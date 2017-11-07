@@ -31,7 +31,7 @@ const filter = (projects, config) => {
 };
 
 export default (fetch, config = serverConfig) => (
-  fetch('/cc.xml')
+  fetch()
     .then(promiseParser)
     .then(parse)
     .then(projects => filter(projects, config))
