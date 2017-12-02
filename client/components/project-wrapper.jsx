@@ -1,17 +1,18 @@
 import React from 'react';
-import Summary from './summary';
+import Project from './project';
 import projectSelector from '../selectors/project-selector';
 
 class ProjectWrapper extends React.PureComponent {
   render() {
-    const { building, passing, failing, unknown } = this.props.projects;
+    const { projects } = this.props;
+
+    if (!projects.length) {
+      return null;
+    }
 
     return (
       <div className="project-wrapper">
-        <Summary projects={building} category="building" />
-        <Summary projects={failing} category="failing" />
-        <Summary projects={unknown} category="unknown" />
-        <Summary projects={passing} category="passing" />
+        { projects.map(project => <Project key={project.name} {...project} />) }
       </div>
     );
   }

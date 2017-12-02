@@ -2,7 +2,7 @@
 
 exports[`App renders an overlay for no projects 1`] = `
 <div
-  className="monitor-wrapper full-height"
+  className="monitor-wrapper"
 >
   <Overlay
     subtitle="Is your API token correct?"
@@ -13,7 +13,7 @@ exports[`App renders an overlay for no projects 1`] = `
 
 exports[`App renders projects correctly 1`] = `
 <div
-  className="monitor-wrapper full-height"
+  className="monitor-wrapper"
 >
   <ProjectSelector
     projects={

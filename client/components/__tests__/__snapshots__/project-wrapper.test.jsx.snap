@@ -4,45 +4,14 @@ exports[`Project wrapper renders correctly 1`] = `
 <div
   className="project-wrapper"
 >
-  <Summary
-    category="building"
-    projects={
-      Array [
-        Object {
-          "name": "org/project-1",
-        },
-      ]
-    }
+  <Project
+    name="org/project-1"
   />
-  <Summary
-    category="failing"
-    projects={
-      Array [
-        Object {
-          "name": "org/project-3",
-        },
-      ]
-    }
+  <Project
+    name="org/project-2"
   />
-  <Summary
-    category="unknown"
-    projects={
-      Array [
-        Object {
-          "name": "org/project-4",
-        },
-      ]
-    }
-  />
-  <Summary
-    category="passing"
-    projects={
-      Array [
-        Object {
-          "name": "org/project-2",
-        },
-      ]
-    }
+  <Project
+    name="org/project-3"
   />
 </div>
 `;

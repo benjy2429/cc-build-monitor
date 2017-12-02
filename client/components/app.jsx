@@ -7,7 +7,7 @@ class App extends React.PureComponent {
   render() {
     const { projects = [] } = this.props;
     return (
-      <div className="monitor-wrapper full-height">
+      <div className="monitor-wrapper">
         { projects.length ?
           <ProjectWrapper projects={projects} /> :
           <Overlay title="No projects to show" subtitle="Is your API token correct?" />

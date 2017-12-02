@@ -3,12 +3,11 @@ import { shallow } from 'enzyme';
 import { UnwrappedProjectWrapper as ProjectWrapper } from '../project-wrapper';
 
 const defaultProps = {
-  projects: {
-    building: [{ name: 'org/project-1' }],
-    passing: [{ name: 'org/project-2' }],
-    failing: [{ name: 'org/project-3' }],
-    unknown: [{ name: 'org/project-4' }],
-  },
+  projects: [
+    { name: 'org/project-1' },
+    { name: 'org/project-2' },
+    { name: 'org/project-3' },
+  ],
 };
 
 describe('Project wrapper', () => {
@@ -18,5 +17,13 @@ describe('Project wrapper', () => {
     );
 
     expect(component).toMatchSnapshot();
+  });
+
+  it('renders nothing with no projects', () => {
+    const component = shallow(
+      <ProjectWrapper projects={[]} />,
+    );
+
+    expect(component.html()).toBeNull();
   });
 });

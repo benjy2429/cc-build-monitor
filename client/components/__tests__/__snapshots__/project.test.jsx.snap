@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project renders correctly 1`] = `
+<div
+  className="project project-passed"
+>
+  <div
+    className="project-name"
+  >
+    some-project
+  </div>
+  <div
+    className="project-status"
+  >
+    passed
+  </div>
+  <div
+    className="project-details"
+  >
+    #
+    42
+  </div>
+</div>
+`;

@@ -1,58 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Project Selector adds a status to each project 1`] = `
+Array [
+  Object {
+    "activity": "Building",
+    "lastBuildStatus": "Success",
+    "status": "building",
+  },
+  Object {
+    "activity": "Sleeping",
+    "lastBuildStatus": "Success",
+    "status": "passed",
+  },
+  Object {
+    "activity": "Sleeping",
+    "lastBuildStatus": "Failure",
+    "status": "failed",
+  },
+  Object {
+    "activity": "Sleeping",
+    "lastBuildStatus": "Unknown",
+    "status": "unknown",
+  },
+  Object {
+    "activity": "Sleeping",
+    "lastBuildStatus": "SomethingElse",
+    "status": "unknown",
+  },
+]
+`;
+
 exports[`Project Selector renders the wrapped component 1`] = `
 <WrappedComponent
-  projects={
-    Object {
-      "building": Array [],
-      "failing": Array [],
-      "passing": Array [],
-      "unknown": Array [],
-    }
-  }
+  projects={Array []}
 />
 `;
 
-exports[`Project Selector sorts projects by activity 1`] = `
-Object {
-  "building": Array [
-    Object {
-      "activity": "Building",
-    },
-  ],
-  "failing": Array [],
-  "passing": Array [],
-  "unknown": Array [
-    Object {
-      "activity": "Sleeping",
-    },
-    Object {
-      "activity": "SomethingElse",
-    },
-  ],
-}
-`;
-
-exports[`Project Selector sorts projects by build status 1`] = `
-Object {
-  "building": Array [],
-  "failing": Array [
-    Object {
-      "lastBuildStatus": "Failure",
-    },
-  ],
-  "passing": Array [
-    Object {
-      "lastBuildStatus": "Success",
-    },
-  ],
-  "unknown": Array [
-    Object {
-      "lastBuildStatus": "SomethingElse",
-    },
-    Object {
-      "lastBuildStatus": "Unknown",
-    },
-  ],
-}
+exports[`Project Selector sorts projects by last build time 1`] = `
+Array [
+  Object {
+    "lastBuildTime": "2017-01-03",
+    "status": "unknown",
+  },
+  Object {
+    "lastBuildTime": "2017-01-02",
+    "status": "unknown",
+  },
+  Object {
+    "lastBuildTime": "2017-01-01",
+    "status": "unknown",
+  },
+]
 `;

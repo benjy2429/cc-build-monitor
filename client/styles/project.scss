@@ -1,5 +1,49 @@
 .project-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 420px);
+  grid-gap: 20px;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.project {
+  background-color: #555;
+  padding: 20px;
+  border-left: 10px solid #555;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-status {
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-details {
+  color: #aaa;
+}
+
+$statuses: (
+  building: $color-building,
+  passed: $color-passed,
+  failed: $color-failed,
+  unknown: $color-unknown
+);
+
+@each $status, $color in $statuses {
+  .project-#{$status} {
+    border-color: $color;
+
+    .project-status {
+      color: $color;
+    }
+  }
 }

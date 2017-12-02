@@ -1,28 +1,34 @@
 import React from 'react';
 
-const filterProjects = (projects) => {
-  const filtered = { building: [], passing: [], failing: [], unknown: [] };
-
-  projects.forEach((project) => {
+const categorizeProjects = projects => (
+  projects.map((project) => {
     if (project.activity === 'Building') {
-      filtered.building.push(project);
-      return;
+      return {
+        ...project,
+        status: 'building',
+      };
     }
-    switch (project.lastBuildStatus) {
-      case 'Success': filtered.passing.push(project); break;
-      case 'Failure': filtered.failing.push(project); break;
-      default: filtered.unknown.push(project); break;
-    }
-  });
+    const statusMap = {
+      Success: 'passed',
+      Failure: 'failed',
+    };
+    return {
+      ...project,
+      status: statusMap[project.lastBuildStatus] || 'unknown',
+    };
+  })
+);
 
-  return filtered;
-};
+const sortProjects = projects => (
+  projects.sort((a, b) => new Date(a.lastBuildTime) < new Date(b.lastBuildTime))
+);
 
 export default Component => (
   class ProjectSelector extends React.PureComponent {
     render() {
-      const filteredProjects = filterProjects(this.props.projects);
-      return <Component {...this.props} projects={filteredProjects} />;
+      const { projects = [] } = this.props;
+      const cleanedProjects = sortProjects(categorizeProjects(projects));
+      return <Component {...this.props} projects={cleanedProjects} />;
     }
   }
 );

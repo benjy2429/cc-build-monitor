@@ -13,11 +13,20 @@ describe('Project Selector', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('sorts projects by activity', () => {
+  it('passes additional props through', () => {
+    const component = shallow(
+      <ProjectSelector className="my-class" />,
+    );
+    expect(component.find(WrappedComponent).prop('className')).toEqual('my-class');
+  });
+
+  it('adds a status to each project', () => {
     const projects = [
-      { activity: 'Sleeping' },
-      { activity: 'Building' },
-      { activity: 'SomethingElse' },
+      { activity: 'Building', lastBuildStatus: 'Success' },
+      { activity: 'Sleeping', lastBuildStatus: 'Success' },
+      { activity: 'Sleeping', lastBuildStatus: 'Failure' },
+      { activity: 'Sleeping', lastBuildStatus: 'Unknown' },
+      { activity: 'Sleeping', lastBuildStatus: 'SomethingElse' },
     ];
     const component = shallow(
       <ProjectSelector projects={projects} />,
@@ -25,12 +34,11 @@ describe('Project Selector', () => {
     expect(component.find(WrappedComponent).prop('projects')).toMatchSnapshot();
   });
 
-  it('sorts projects by build status', () => {
+  it('sorts projects by last build time', () => {
     const projects = [
-      { lastBuildStatus: 'SomethingElse' },
-      { lastBuildStatus: 'Success' },
-      { lastBuildStatus: 'Failure' },
-      { lastBuildStatus: 'Unknown' },
+      { lastBuildTime: '2017-01-03' },
+      { lastBuildTime: '2017-01-01' },
+      { lastBuildTime: '2017-01-02' },
     ];
     const component = shallow(
       <ProjectSelector projects={projects} />,

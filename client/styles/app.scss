@@ -1,8 +1,11 @@
 @import 'globals';
-@import 'summary';
 @import 'project';
 
 $color-background: #161616;
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
