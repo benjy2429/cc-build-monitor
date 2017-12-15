@@ -15,17 +15,24 @@ exports[`App renders projects correctly 1`] = `
 <div
   className="monitor-wrapper"
 >
-  <ProjectSelector
-    projects={
-      Array [
-        Object {
-          "name": "project1",
-        },
-        Object {
-          "name": "project2",
-        },
-      ]
-    }
-  />
+  <div>
+    <div
+      className="header"
+    >
+      CC Build Monitor
+    </div>
+    <ProjectSelector
+      projects={
+        Array [
+          Object {
+            "name": "project1",
+          },
+          Object {
+            "name": "project2",
+          },
+        ]
+      }
+    />
+  </div>
 </div>
 `;

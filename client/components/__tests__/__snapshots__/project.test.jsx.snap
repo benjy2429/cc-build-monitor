@@ -5,7 +5,7 @@ exports[`Project renders correctly 1`] = `
   className="project project-passed"
 >
   <div
-    className="project-name"
+    className="project-name text-ellipsis"
   >
     some-project
   </div>

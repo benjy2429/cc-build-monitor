@@ -10,7 +10,7 @@ class Project extends React.PureComponent {
 
     return (
       <div className={`project project-${status}`}>
-        <div className="project-name">{formatName(name)}</div>
+        <div className="project-name text-ellipsis">{formatName(name)}</div>
         <div className="project-status">{status}</div>
         <div className="project-details">#{lastBuildLabel}</div>
       </div>
