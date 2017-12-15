@@ -31,6 +31,16 @@
 
 .project-details {
   color: #aaa;
+  display: inline-block;
+  width: 50%;
+}
+
+.project-build {
+  text-align: left;
+}
+
+.project-time {
+  text-align: right;
 }
 
 $statuses: (

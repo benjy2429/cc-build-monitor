@@ -73,6 +73,7 @@
     "koa-webpack": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-timeago": "^3.4.3",
     "request-promise": "^4.2.1",
     "xml2js": "^0.4.19"
   }

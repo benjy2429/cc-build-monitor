@@ -20,7 +20,17 @@ const categorizeProjects = projects => (
 );
 
 const sortProjects = projects => (
-  projects.sort((a, b) => new Date(a.lastBuildTime) < new Date(b.lastBuildTime))
+  projects.sort((a, b) => {
+    const date1 = new Date(a.lastBuildTime);
+    const date2 = new Date(b.lastBuildTime);
+    if (date1 > date2) {
+      return -1;
+    }
+    if (date1 < date2) {
+      return 1;
+    }
+    return 0;
+  })
 );
 
 export default Component => (

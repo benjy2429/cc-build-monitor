@@ -6,6 +6,7 @@ const defaultProps = {
   name: 'some-project',
   status: 'passed',
   lastBuildLabel: '42',
+  lastBuildTime: '2000-01-01',
 };
 
 describe('Project', () => {

@@ -15,10 +15,20 @@ exports[`Project renders correctly 1`] = `
     passed
   </div>
   <div
-    className="project-details"
+    className="project-details project-build"
   >
     #
     42
   </div>
+  <TimeAgo
+    className="project-details project-time"
+    component="time"
+    date="2000-01-01"
+    formatter={[Function]}
+    live={true}
+    maxPeriod={Infinity}
+    minPeriod={0}
+    now={[Function]}
+  />
 </div>
 `;
